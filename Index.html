@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dog Breed Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 500px;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Select a Dog Breed</h1>
+  <button onclick="showImage('pitbull')">Pit Bull</button>
+  <button onclick="showImage('labrador')">Labrador</button>
+  <button onclick="showImage('beagle')">Beagle</button>
+
+  <div id="image-container">
+    <img id="breed-image" src="" alt="Dog breed image" style="display:none;">
+  </div>
+
+  <script>
+    function showImage(breed) {
+      const images = {
+        pitbull: "https://upload.wikimedia.org/wikipedia/commons/2/22/Red_Nose_Pitbull_Terrier.JPG",
+        labrador: "https://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg",
+        beagle: "https://upload.wikimedia.org/wikipedia/commons/5/55/Beagle_600.jpg"
+      };
+
+      const img = document.getElementById("breed-image");
+      img.src = images[breed];
+      img.style.display = "block";
+    }
+  </script>
+</body>
+</html>
